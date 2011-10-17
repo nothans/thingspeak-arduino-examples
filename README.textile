@@ -17,4 +17,5 @@ Support for Arduino is available at "Arduino.cc":http://www.arduino.cc
 h1. Examples
 
 h3. Ethernet
+
 Examples in the "Ethernet" folder require an Arduino with an Ethernet Shield attached or the Arduino Ethernet device.
