@@ -7,3 +7,14 @@ In addition to storing and retrieving numeric and alphanumeric data, the ThingSp
 The ThingSpeak application also features time zone management, read/write API key management and JavaScript-based charts from Highslide Software / Torstein Hønsi.
 
 Support for ThingSpeak is available on the "ThingSpeak Community":http://community.thingspeak.com/ site which features a "Blog":http://community.thingspeak.com/, "Forum":http://community.thingspeak.com/forum/, "Documentation":http://community.thingspeak.com/documentation/, and "Tutorials":http://community.thingspeak.com/tutorials/.
+
+h1. Arduino
+
+Arduino is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software. It's intended for artists, designers, hobbyists, and anyone interested in creating interactive objects or environments.
+
+Support for Arduino is available at "Arduino.cc":http://www.arduino.cc
+
+h1. Examples
+
+h3. Ethernet/
+Examples in this folder require an Arduino with an Ethernet Shield attached or the Arduino Ethernet device.

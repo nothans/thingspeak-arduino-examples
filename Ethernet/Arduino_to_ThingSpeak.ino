@@ -22,8 +22,7 @@
  
  Arduino Requirements:
  
-   * Arduino with Ethernet Shield
-   * Arduino Ethernet
+   * Arduino with Ethernet Shield or Arduino Ethernet
    * Arduino 1.0 IDE
    
   Network Requirements:
