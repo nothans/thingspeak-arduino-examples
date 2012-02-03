@@ -46,7 +46,7 @@ byte mac[] = { 0xD4, 0x28, 0xB2, 0xFF, 0xA0, 0xA1 }; // Must be unique on local 
 
 // ThingSpeak Settings
 char thingSpeakAddress[] = "api.thingspeak.com";
-String writeAPIKey = "817MX2WYYR0EV68M";
+String writeAPIKey = "XXXMX2WYYR0EV68M";
 const int updateThingSpeakInterval = 16 * 1000;      // Time interval in milliseconds to update ThingSpeak (number of seconds * 1000 = interval)
 
 // Variable Setup
