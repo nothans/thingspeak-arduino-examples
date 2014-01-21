@@ -37,9 +37,9 @@
 
 //ThingSpeak Settings 
 String thingSpeakAPI = "api.thingspeak.com";
-String talkBackAPIKey = "XXXXXXXXXXXXXX";
+String talkBackAPIKey = "XXXXXXXXXXXXXXXX";
 String talkBackID = "YYYY";
-const int checkTalkBackInterval = 60 * 1000;      // Time interval in milliseconds to check TalkBack (number of seconds * 1000 = interval)
+const int checkTalkBackInterval = 15 * 1000;    // Time interval in milliseconds to check TalkBack (number of seconds * 1000 = interval)
 
 // Variable Setup
 long lastConnectionTime = 0;
@@ -49,37 +49,54 @@ void setup()
   // Setup On-board LED
   pinMode(13, OUTPUT);
   digitalWrite(13, LOW);
+  delay(1000);
+  digitalWrite(13, HIGH);
+  delay(1000);
+  digitalWrite(13, LOW);
   
   // Initialize Bridge
   Bridge.begin();
-
+  
   // Initialize Serial
   Serial.begin(9600);
+  while(!Serial);
 }
 
 void loop()
-{
+{  
   // Check ThingSpeak for TalkBack Commands
-  if(millis() - lastConnectionTime > checkTalkBackInterval)
-  {
-    checkTalkBack();
-  }
+  checkTalkBack();
+  delay(checkTalkBackInterval);
 }
 
 void checkTalkBack()
 {
   HttpClient client;
-   
-  String talkbackURL =  "https://" + thingSpeakAPI + "talkbacks/" + talkBackID + "/commands/execute?api_key=" + talkBackAPIKey;
+  
+  String talkBackCommand;
+  char charIn;
+  String talkBackURL =  "http://" + thingSpeakAPI + "/talkbacks/" + talkBackID + "/commands/execute?api_key=" + talkBackAPIKey;
   
   // Make a HTTP GET request to the TalkBack API:
-  client.get(talkbackURL);
-  
+  client.get(talkBackURL);
+    
   while (client.available()) {
-    char c = client.read();
-    Serial.print(c);
+    charIn = client.read();
+    talkBackCommand += charIn;
   }
-  Serial.flush();
- 
-  lastConnectionTime = millis();
+  
+  // Turn On/Off the On-board LED
+  if (talkBackCommand == "TURN_ON")
+  {  
+    Serial.println(talkBackCommand);
+    digitalWrite(13, HIGH);
+  }
+  else if (talkBackCommand == "TURN_OFF")
+  {      
+    Serial.println(talkBackCommand);
+    digitalWrite(13, LOW);
+  }
+  
+  Serial.flush(); 
+  delay(1000);
 }
