@@ -4,7 +4,7 @@
  
  The ThingSpeak Client sketch is designed for the Arduino and Ethernet.
  This sketch updates a channel feed with an analog input reading via the
- ThingSpeak API (http://community.thingspeak.com/documentation/)
+ ThingSpeak API (https://thingspeak.com/docs)
  using HTTP POST. The Arduino uses DHCP and DNS for a simpler network setup.
  The sketch also includes a Watchdog / Reset function to make sure the
  Arduino stays connected and/or regains connectivity after a network outage.
@@ -13,17 +13,14 @@
  
  Getting Started with ThingSpeak:
  
-   * Sign Up for New User Account - https://www.thingspeak.com/users/new
-   * Register your Arduino by selecting Devices, Add New Device
-   * Once the Arduino is registered, click Generate Unique MAC Address
-   * Enter the new MAC Address in this sketch under "Local Network Settings"
+   * Sign Up for New User Account - https://thingspeak.com/users/new
    * Create a new Channel by selecting Channels and then Create New Channel
    * Enter the Write API Key in this sketch under "ThingSpeak Settings"
  
  Arduino Requirements:
  
    * Arduino with Ethernet Shield or Arduino Ethernet
-   * Arduino 1.0 IDE
+   * Arduino 1.0+ IDE
    
   Network Requirements:
 
@@ -46,7 +43,7 @@ byte mac[] = { 0xD4, 0x28, 0xB2, 0xFF, 0xA0, 0xA1 }; // Must be unique on local 
 
 // ThingSpeak Settings
 char thingSpeakAddress[] = "api.thingspeak.com";
-String writeAPIKey = "XXXMX2WYYR0EV68M";
+String writeAPIKey = "XXXMX2WYYR0EVZZZ";
 const int updateThingSpeakInterval = 16 * 1000;      // Time interval in milliseconds to update ThingSpeak (number of seconds * 1000 = interval)
 
 // Variable Setup
@@ -69,7 +66,7 @@ void setup()
 void loop()
 {
   // Read value from Analog Input Pin 0
-  String analogPin0 = String(analogRead(A0), DEC);
+  String analogValue0 = String(analogRead(A0), DEC);
   
   // Print Update Response to Serial Monitor
   if (client.available())
@@ -90,7 +87,7 @@ void loop()
   // Update ThingSpeak
   if(!client.connected() && (millis() - lastConnectionTime > updateThingSpeakInterval))
   {
-    updateThingSpeak("field1="+analogPin0);
+    updateThingSpeak("field1="+analogValue0);
   }
   
   // Check if Arduino Ethernet needs to be restarted
