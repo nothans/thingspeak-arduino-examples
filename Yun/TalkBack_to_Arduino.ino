@@ -25,7 +25,7 @@
    * Router with Wi-Fi
    * DHCP enabled on Router
  
- Created: Jan 30, 2014 by Hans Scharler (http://www.iamshadowlord.com)
+ Created: Jan 30, 2014 by Hans Scharler (http://www.nothans.com)
  
  Additional Credits:
  Example sketches from Arduino team, ThingSpeak and Yun Example by Tenet Technetronics
