@@ -28,7 +28,7 @@
    * DHCP enabled on Router
    * Unique MAC Address for Arduino
  
- Created: October 17, 2011 by Hans Scharler (http://www.iamshadowlord.com)
+ Created: October 17, 2011 by Hans Scharler (http://www.nothans.com)
  
  Additional Credits:
  Example sketches from Arduino team, Ethernet by Adrian McEwen
