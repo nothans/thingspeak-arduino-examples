@@ -4,7 +4,7 @@
  
  The ThingTweet sketch is designed for the Arduino + Ethernet Shield.
  This sketch updates a Twitter status via the ThingTweet App
- (http://community.thingspeak.com/documentation/apps/thingtweet/) using HTTP POST.
+ (https://thingspeak.com/docs/thingtweet) using HTTP POST.
  ThingTweet is a Twitter proxy web application that handles the OAuth.
  
  Getting Started with ThingSpeak and ThingTweet:
@@ -25,8 +25,8 @@
    * DHCP enabled on Router
    * Unique MAC Address for Arduino
  
- Created: October 17, 2011 by Hans Scharler (http://www.iamshadowlord.com)
- Updated: December 7, 2012 by Hans Scharler (http://www.iamshadowlord.com)
+ Created: October 17, 2011 by Hans Scharler (http://www.nothans.com)
+ Updated: December 7, 2012 by Hans Scharler (http://www.nothans.com)
  
  Additional Credits:
  Example sketches from Arduino team, Ethernet by Adrian McEwen
